@@ -2,6 +2,8 @@
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        # return Counter(s) == Counter(t)
+        # return sorted(s) == sorted(t)
 
         if len(s) ==len(t):
             set_s, set_t = {}, {}
@@ -34,5 +36,23 @@ class Solution:
         else:
             return False
             
+            
+            
+    # clean code
+    def another(self, s: str, t: str) -> bool:
+
+        if len(s) != len(t):
+            return False
+
+        set_s, set_t = {}, {}
+        for i in range(len(s)):
+            set_s[s[i]] = 1 + set_s.get(s[i], 0)
+            set_t[t[i]] = 1 + set_t.get(t[i], 0)
+        
+        for j in set_s:
+            if set_s[j] != set_t.get(j, 0):
+                return False
+        return True
+        
             
             
