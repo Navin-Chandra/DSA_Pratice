@@ -54,5 +54,29 @@ class Solution:
                 return False
         return True
         
+
+    #  another approch
+    def isAnagram(self, s: str, t: str) -> bool:
+        # return sorted(s) == sorted(t)
+
+        if len(s) != len(t):
+            return False
+
+        frequency = {}
+        for i in range(len(s)):
+            if s[i] in frequency:
+                frequency[s[i]] += 1
+            else:
+                frequency[s[i]] = 1
+            
+            if t[i] in frequency:
+                frequency[t[i]] -= 1
+            else:
+                frequency[t[i]] = -1
+
+        for val in frequency.values():
+            if val != 0:
+                return False
+        return True
             
             
