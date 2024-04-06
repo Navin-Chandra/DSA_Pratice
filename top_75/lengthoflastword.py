@@ -32,3 +32,8 @@ class Solution:
             i -= 1
 
         return length 
+
+#  one line solution
+#  return len(s.rstrip().split(' ')[-1])
+# def lengthOfLastWord(self, s: str) -> int:
+#     return len(s.split().pop())

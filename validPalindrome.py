@@ -35,7 +35,7 @@ class Solution:
 
 
         
-        # basic 
+    # basic 
     # def isPalindrome(self, s: str) -> bool:
         # method 1
         # newStr = ""
