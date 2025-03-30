@@ -1,3 +1,6 @@
+# import Counter
+from collections import Counter
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         
@@ -27,7 +30,7 @@ class Solution:
 
         return True
     
-
+    # method 2 with get()
     def isAnagram_2(self, s: str, t: str) -> bool:
         
         if len(s) != len(t):
@@ -44,6 +47,15 @@ class Solution:
                 return False
 
         return True
+    
+    # method 3 with Counter
+    def isAnagram_3(self, s: str, t: str) -> bool:
+        return Counter(s) == Counter(t)
+    
+
+    # method 4 withot extara hashmap memory with sorting both and compare
+    def isAnagram_3(self, s: str, t: str) -> bool:
+        return sorted(s) == sorted(t)
 
 
 program = Solution()
@@ -52,6 +64,6 @@ program = Solution()
 s = "rat"
 t = "car"
 
-print(program.isAnagram_2(s=s,t=t))
+print(program.isAnagram_3(s=s,t=t))
 
 
