@@ -18,7 +18,7 @@ class Solution:
         
         print(res)
 
-        return res.values()
+        return list(res.values())
 
 program = Solution()
 strs =["eat","tea","tan","ate","nat","bat"]
